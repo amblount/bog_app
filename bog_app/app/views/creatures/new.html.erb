@@ -1,0 +1,8 @@
+<div class="container">
+  <%= form_for @creature do |f| %>
+  <br><br><br>
+    Name:         <%= f.text_field :name %><br>
+    Description:  <%= f.text_area :description %>
+                  <%= f.submit "Save Creature" %>
+  <% end %>
+</div>
