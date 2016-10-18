@@ -29,6 +29,18 @@ Start: 11:08
 
 End:
 
+CURL COMMAND => curl https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css > vendor/assets/stylesheets/bootstrap-3.3.6.min.css
+
+Rails handles CSS and JavaScript with a system called the asset pipeline, here's how to add Bootstrap CSS using the asset pipeline.
+
+Third-party libraries belong in the vendor/assets sub-directory of your Rails app. You'll need to download a Bootstrap CSS file and add it to this directory.
+
+One way you can do that is to use the following Terminal command to download the Bootstrap CSS file (via curl) and save it in a new bootstrap-3.3.6.min.css file inside the vendor/assets/stylesheets sub-directory. You may want to find and use the most recent version of Bootstrap if it's no longer 3.3.6.
+
+How does adding the CDN components or the css to the vendor/assets folder compare to having them used as a CDN? Is there a difference in accessibility or scope?
+
+
+
 ##Fourth Sprint
 
 Start: 
