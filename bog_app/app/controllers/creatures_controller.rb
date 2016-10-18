@@ -13,9 +13,6 @@ class CreaturesController < ApplicationController
 
   def create
 
-      # whitelist params and save them to a variable
-      creature_params = params.require(:creature).permit(:name, :description)
-
       # create a new creature from `creature_params`
       creature = Creature.new(creature_params)
 
@@ -25,6 +22,29 @@ class CreaturesController < ApplicationController
         # redirect_to creatures_path is equivalent to:
         # redirect_to "/creatures"
       end
+
+  end
+
+  def edit
+    @creature = Creature.find(params[:id])
+  end
+
+  def update
+    @creature = Creature.find(params[:id])
+    @creature.update_attributes(creature_params)
+    redirect_to creature_path(@creature)
+  end
+
+  def destroy
+    @creature = Creature.find(params[:id])
+    @creature.destroy
+    redirect_to creatures_path
+  end
+
+  private
+
+  def creature_params
+    params.require(:creature).permit(:name, :description)
 
   end
 end
